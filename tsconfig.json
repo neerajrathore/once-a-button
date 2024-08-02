@@ -1,0 +1,35 @@
+{
+  "compilerOptions": {
+    "target": "es2016",                                  /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */
+    "esModuleInterop": true,                             /* Emit additional JavaScript to ease support for importing CommonJS modules. This enables 'allowSyntheticDefaultImports' for type compatibility. */
+    "forceConsistentCasingInFileNames": true,            /* Ensure that casing is correct in imports. */
+    "strict": true,                                      /* Enable all strict type-checking options. */
+    "skipLibCheck": true                                 /* Skip type checking all .d.ts files. */,
+
+    // compile <button>{props.label}</button> and create element function call (not use typescript compile)
+    "jsx": "react",
+
+    "module": "ESNext",
+
+    // to create .d.ts file to usable for both js and ts users
+    "declaration": true,
+
+    // 
+    "declarationDir": "types",
+
+    // for debugging shows line numbers of ts code error as opposed auto generated js files
+    "sourceMap": true,
+
+    // bundle library 
+    "outDir": "dist",
+
+    // how node look for modules like import x from y for absolute & relative paths and looks in node_modules and then elsewhere
+    "moduleResolution": "Node",
+
+    // assume default exports if you are not exporting default
+    "allowSyntheticDefaultImports": true,
+
+    // rollup to bundle js files. typescript for bundle type file
+    "emitDeclarationOnly": true
+  }
+}
