@@ -2800,6 +2800,36 @@ if (process.env.NODE_ENV === 'production') {
 var reactExports = react.exports;
 var React = /*@__PURE__*/getDefaultExportFromCjs(reactExports);
 
+function styleInject(css, ref) {
+  if ( ref === void 0 ) ref = {};
+  var insertAt = ref.insertAt;
+
+  if (typeof document === 'undefined') { return; }
+
+  var head = document.head || document.getElementsByTagName('head')[0];
+  var style = document.createElement('style');
+  style.type = 'text/css';
+
+  if (insertAt === 'top') {
+    if (head.firstChild) {
+      head.insertBefore(style, head.firstChild);
+    } else {
+      head.appendChild(style);
+    }
+  } else {
+    head.appendChild(style);
+  }
+
+  if (style.styleSheet) {
+    style.styleSheet.cssText = css;
+  } else {
+    style.appendChild(document.createTextNode(css));
+  }
+}
+
+var css_248z = "button {\r\n    color: aqua;\r\n}";
+styleInject(css_248z);
+
 // webpack is create bundle single file for large application 
 // roll up is used to bundle libraries to create packages
 const Button = (props) => {
