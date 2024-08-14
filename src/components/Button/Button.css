@@ -1,3 +1,33 @@
 button {
-    color: aqua;
+    color: black;
+}
+
+.storybook-button {
+    border-radius: 3em;
+}
+
+.storybook-button--primary {
+    color: white;
+    background-color: #249d7a;
+}
+
+.storybook-button--secondary {
+    color: #333;
+    background-color: transparent;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;
+}
+
+.storybook-button--small {
+    font-size: 12px;
+    padding: 10px 16px;
+}
+
+.storybook-button--medium {
+    font-size: 16px;
+    padding: 11px 20px;
+}
+
+.storybook-button--large {
+    font-size: 20px;
+    padding: 12px 24px;
 }
