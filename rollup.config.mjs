@@ -4,13 +4,14 @@ import commonjs from '@rollup/plugin-commonjs';
 import typescript from '@rollup/plugin-typescript';
 import dts from 'rollup-plugin-dts';
 import postcss from 'rollup-plugin-postcss'
+import { defineConfig } from 'rollup';
 // import * as packageJson from './package.json' assert { type: "json" };
 
 // const packageJson = require('./package.json');
 const packageJson = JSON.parse(readFileSync('./package.json'));
 
 
-export default [
+export default defineConfig(
   {
     // entry point for our library
     input: './src/index.ts',
@@ -29,8 +30,9 @@ export default [
     plugins: [
       resolve(),
       commonjs(),
-      typescript({ 
-        tsconfig: './tsconfig.json'
+      typescript({
+        tsconfig: './tsconfig.json',
+        sourceMap: false
       }),
       postcss()
     ],
@@ -41,4 +43,4 @@ export default [
     plugins: [dts()],
     external: [/\.css$/] // other files relevant while bundling 
   },
-];
+);

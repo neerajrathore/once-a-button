@@ -5,18 +5,16 @@
     "forceConsistentCasingInFileNames": true,
     "strict": true,
     "skipLibCheck": true,
-    
     "jsx": "react",
     "module": "esnext",
     "declaration": true,
-    "declarationDir": "./dist/types",
+    "declarationDir": "types",
     "sourceMap": true,
     "outDir": "dist",
     // "rootDir": "src",
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
     "emitDeclarationOnly": true,
-    
     // some property in 20 to 33 is adding map file in dist
     "declarationMap": true,
     "noEmit": false,
@@ -31,5 +29,28 @@
     "downlevelIteration": true,
     "noFallthroughCasesInSwitch": true,
     "noImplicitReturns": true,
-  }
+    "paths": {
+      "*": [
+        "*",
+      ]
+    },
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+  },
+  "include": [
+    "src",
+    "*.tsx",
+    "*.ts",
+    "*.mjs",
+    "rollup.config.mjs"
+  ],
+  "exclude": [
+    "coverage",
+    "config",
+    "dist",
+    "node_modules/**"
+  ]
 }

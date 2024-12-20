@@ -43,10 +43,10 @@
     "tslib": "^2.6.3",
     "typescript": "^5.5.4"
   },
-  "main": "dist/cjs/index.js",
-  "module": "dist/esm/index.js",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
   "files": [
     "dist"
   ],
-  "types": "dist/index.d.ts"
+  "types": "dist/types/index.d.ts"
 }
